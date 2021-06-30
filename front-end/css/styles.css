@@ -24,6 +24,15 @@ h1, h2 {
   font-family: 'Finger Paint', cursive;
 }
 
+h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 nav {
   background-color: darkslategrey;
   color: #fdfdfb;
@@ -43,13 +52,8 @@ nav {
   }
 }
 
-/* TITLE : "Our Products" */
-.products__title, .company-description__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+/* COMPANY DESCRIPTION */
+.company-description {
+  background-color: brown;
 }
 /*# sourceMappingURL=styles.css.map */

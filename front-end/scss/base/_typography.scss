@@ -7,3 +7,8 @@ body {
 h1, h2 {
     font-family: 'Finger Paint', cursive;
 }
+
+h2 {
+    display: flex;
+    justify-content: center;
+}

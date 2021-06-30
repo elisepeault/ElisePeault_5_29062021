@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../scss/pages/order-confirmation.scss"
-    ],
-    "names": [],
-    "file": "order-confirmation.css"
-}
