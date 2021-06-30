@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/scss/layouts/header.scss"
+    ],
+    "names": [],
+    "file": "header.css"
+}

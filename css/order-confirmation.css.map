@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/scss/pages/order-confirmation.scss"
+    ],
+    "names": [],
+    "file": "order-confirmation.css"
+}

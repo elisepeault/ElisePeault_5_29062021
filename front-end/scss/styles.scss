@@ -1,0 +1,10 @@
+@import "./utils/variables.scss" ;
+@import "./utils/mixins.scss" ;
+@import "./base/general.scss";
+@import "./base/typography.scss";
+@import "./layouts/header.scss";
+@import "./layouts/footer.scss";
+@import "./pages/index.scss";
+@import "./pages/order-confirmation.scss";
+@import "./pages/product.scss";
+@import "./pages/shopping-cart.scss";
