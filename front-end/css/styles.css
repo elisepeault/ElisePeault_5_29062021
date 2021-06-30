@@ -1,3 +1,4 @@
+/* COLORS */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +35,7 @@ h2 {
 }
 
 nav {
-  background-color: darkslategrey;
+  background-color: #2f4f4f;
   color: #fdfdfb;
 }
 
@@ -54,6 +55,6 @@ nav {
 
 /* COMPANY DESCRIPTION */
 .company-description {
-  background-color: brown;
+  background-color: #b8e6e6;
 }
 /*# sourceMappingURL=styles.css.map */
