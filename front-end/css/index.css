@@ -1,4 +1,8 @@
-/* BANNER */
+nav {
+  background-color: darkslategrey;
+  color: #fdfdfb;
+}
+
 .teddy-banner {
   background-image: url("../images/teddy_banner.jpg");
   background-size: cover;
@@ -6,14 +10,13 @@
   background-position: center;
 }
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
   .teddy-banner {
     min-height: 20rem;
   }
 }
 
-/* TITLE : "Our Products" */
-.products__title, .company-description__title {
+.products-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

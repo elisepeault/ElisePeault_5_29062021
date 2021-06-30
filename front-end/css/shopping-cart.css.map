@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../front-end/scss/pages/shopping-cart.scss"
+    ],
+    "names": [],
+    "file": "shopping-cart.css"
+}

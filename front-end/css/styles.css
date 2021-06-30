@@ -29,7 +29,6 @@ nav {
   color: #fdfdfb;
 }
 
-/* BANNER */
 .teddy-banner {
   background-image: url("../images/teddy_banner.jpg");
   background-size: cover;
@@ -37,13 +36,12 @@ nav {
   background-position: center;
 }
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
   .teddy-banner {
     min-height: 20rem;
   }
 }
 
-/* TITLE : "Our Products" */
 .products-title {
   display: -webkit-box;
   display: -ms-flexbox;
