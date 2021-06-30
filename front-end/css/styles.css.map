@@ -1,18 +1,18 @@
 {
     "version": 3,
-    "mappings": "AGAA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACtB;;AAED,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,CAAC,CAAC;EACE,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;CACxB;;ACbD,WAAW;AAEX,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,4BAA4B;CAC5C;;AAED,AAAA,EAAE,EAAE,EAAE,CAAC;EACH,WAAW,EAAE,uBAAuB;CACvC;;AGRD,AAAA,GAAG,CAAC;EACA,gBAAgB,EAAE,aAAa;EAC/B,KAAK,EAAE,OAAkB;CAC5B;;AAED,AAAA,aAAa,CAAC;EACV,gBAAgB,EAAE,iCAAiC;EACnD,eAAe,EAAE,KAAK;EACtB,UAAU,EAAE,KAAK;EACjB,mBAAmB,EAAE,MAAM;CAC9B;;AAED,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAChC,AAAA,aAAa,CAAC;IACV,UAAU,EAAE,KAAK;GACpB;;;AAGL,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAC1B",
+    "mappings": "AGAA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACtB;;AAED,AAAA,IAAI,CAAC;EACD,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,CAAC,CAAC;EACE,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;CACxB;;ACbD,WAAW;AAEX,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,4BAA4B;CAC5C;;AAED,AAAA,EAAE,EAAE,EAAE,CAAC;EACH,WAAW,EAAE,uBAAuB;CACvC;;ACRD,AAAA,GAAG,CAAC;EACA,gBAAgB,EAAE,aAAa;EAC/B,KAAK,EAAE,OAAkB;CAC5B;;AEHD,YAAY;AAEZ,AAAA,aAAa,CAAC;EACV,gBAAgB,EAAE,iCAAiC;EACnD,eAAe,EAAE,KAAK;EACtB,UAAU,EAAE,KAAK;EACjB,mBAAmB,EAAE,MAAM;CAI9B;;AAHG,MAAM,EAAE,SAAS,EAAE,MAAM;EAL7B,AAAA,aAAa,CAAC;IAMN,UAAU,EAAE,KAAK;GAExB;;;AAED,4BAA4B;AAC5B,AAAA,gBAAgB,EAAE,2BAA2B,CAAC;EAC1C,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAC1B",
     "sources": [
-        "../front-end/scss/styles.scss",
-        "../front-end/scss/utils/variables.scss",
-        "../front-end/scss/utils/mixins.scss",
-        "../front-end/scss/base/general.scss",
-        "../front-end/scss/base/typography.scss",
-        "../front-end/scss/layouts/header.scss",
-        "../front-end/scss/layouts/footer.scss",
-        "../front-end/scss/pages/index.scss",
-        "../front-end/scss/pages/order-confirmation.scss",
-        "../front-end/scss/pages/product.scss",
-        "../front-end/scss/pages/shopping-cart.scss"
+        "../scss/styles.scss",
+        "../scss/utils/variables.scss",
+        "../scss/utils/mixins.scss",
+        "../scss/base/general.scss",
+        "../scss/base/typography.scss",
+        "../scss/layouts/header.scss",
+        "../scss/layouts/footer.scss",
+        "../scss/pages/index.scss",
+        "../scss/pages/order-confirmation.scss",
+        "../scss/pages/product.scss",
+        "../scss/pages/shopping-cart.scss"
     ],
     "names": [],
     "file": "styles.css"

@@ -2,7 +2,7 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "../front-end/scss/utils/mixins.scss"
+        "../scss/utils/mixins.scss"
     ],
     "names": [],
     "file": "mixins.css"

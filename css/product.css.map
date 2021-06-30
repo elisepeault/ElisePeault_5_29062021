@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "../front-end/scss/pages/product.scss"
-    ],
-    "names": [],
-    "file": "product.css"
-}
