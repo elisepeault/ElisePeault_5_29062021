@@ -32,6 +32,14 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  color: #2f4f4f;
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1.3rem;
 }
 
 nav {
@@ -54,7 +62,18 @@ nav {
 }
 
 /* COMPANY DESCRIPTION */
-.company-description {
+.company-description__container {
   background-color: #b8e6e6;
+  width: 90%;
+  margin: auto;
 }
+
+.company-description__container__text {
+  padding: 0.8rem;
+  line-height: 1.5rem;
+}
+
+/*#products__cards div {
+    background-color: brown;
+}*/
 /*# sourceMappingURL=styles.css.map */
