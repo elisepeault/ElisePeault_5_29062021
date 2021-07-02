@@ -58,7 +58,7 @@ nav {
   padding: 1rem;
 }
 
-nav ul {
+nav a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,13 +67,20 @@ nav ul {
           align-items: center;
 }
 
-nav ul li {
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 0 1rem 0 1rem;
+nav .brand-logo h1 {
+  padding-left: 0.5rem;
 }
 
-nav ul li a:hover {
+nav .brand-logo h1:hover {
+  color: #b8e6e6;
+}
+
+nav .shopping-cart {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+nav .shopping-cart:hover {
   color: #b8e6e6;
 }
 

@@ -4,16 +4,22 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    ul {
+    a {
         display: flex;
         align-items: center;
-        li {
-            font-size: 1.3rem;
-            font-weight: bold;
-            padding: 0 1rem 0 1rem; 
-            a:hover {
-                color: $secondary-color;
-            }
+    }
+    .brand-logo h1 {
+        padding-left: 0.5rem;
+        &:hover {
+            color: $secondary-color;
         }
     }
+    .shopping-cart {
+        font-size: 1.3rem;
+        font-weight: bold;
+        &:hover {
+            color: $secondary-color;
+        }
+    }  
 }
+
