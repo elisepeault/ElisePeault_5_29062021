@@ -11,16 +11,30 @@
 }
 
 /* COMPANY DESCRIPTION */
-.company-description__container {
-    background-color: $secondary-color;
-    width: 90%;
-    margin: auto;
-    &__text {
-        padding: 0.8rem;
-        line-height: 1.5rem;
+.company-description {
+    padding: 1.2rem;
+    @media(min-width: 1025px) {
+        padding: 0 10rem 0 10rem;
     }
 }
 
-/*#products__cards div {
-    background-color: brown;
-}*/
+.company-description__container {
+    background-color: $secondary-color;
+    margin: auto;
+    &__text {
+        padding: 0.8rem;
+        line-height: 2rem;
+    }
+}
+#products__cards {
+    padding: 1.2rem;
+    div {
+        border: 0.2rem solid $tertiary-color;
+        width: 30rem;
+        height : 30rem;
+        img {
+            object-fit: cover;
+        }
+    }
+
+}

@@ -1,4 +1,10 @@
 nav {
     background-color: $primary-color;
     color: rgb(253, 253, 251);
+    display: flex;
+    padding: 1rem;
+    ul {
+        display: flex;
+        align-items: center;
+    }
 }

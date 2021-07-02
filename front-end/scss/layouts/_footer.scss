@@ -1,0 +1,12 @@
+//contact, réseaux
+
+footer {
+    background-color: $primary-color;
+    color: rgb(253, 253, 251);
+    display: flex;
+    padding: 1.5rem;
+    ul {
+        display: flex;
+        align-items: center;
+    }
+}
