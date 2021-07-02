@@ -18,6 +18,7 @@
     }
 }
 
+// Text container of the company description
 .company-description__container {
     background-color: $secondary-color;
     margin: auto;
@@ -26,6 +27,8 @@
         line-height: 2rem;
     }
 }
+
+// TEDDIES CARDS 
 #products__cards {
     padding: 1.2rem;
     display: flex;
@@ -65,5 +68,4 @@
             padding: 0.8rem;
         }
     }
-
 }

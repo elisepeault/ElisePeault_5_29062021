@@ -52,6 +52,9 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1rem;
 }
 
@@ -62,6 +65,16 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+nav ul li {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0 1rem 0 1rem;
+}
+
+nav ul li a:hover {
+  color: #b8e6e6;
 }
 
 footer {
