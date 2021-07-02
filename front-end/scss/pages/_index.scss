@@ -28,12 +28,41 @@
 }
 #products__cards {
     padding: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
     div {
         border: 0.2rem solid $tertiary-color;
-        width: 30rem;
-        height : 30rem;
+        border-radius: 5%;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        @media(min-width: 768px) {
+        min-width: 20rem;
+        width : 45%;
+        margin: 0 0.5rem 2rem 0.5rem;
+        }
+        @media(min-width: 1045px) {
+            width: 30%;
+        }
+        @media(min-width: 1385px) {
+            width: 22%;
+        }
+        @media(min-width: 1725px) {
+            width: 19%;
+        }
         img {
             object-fit: cover;
+            width: 100%;
+            height: 15rem;
+        }
+        span {
+            font-size: 1.3rem;
+            font-weight: bold;
+
+            display: flex;
+            justify-content: center;
+            padding: 0.8rem;
         }
     }
 

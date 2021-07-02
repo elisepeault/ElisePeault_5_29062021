@@ -119,16 +119,64 @@ footer ul {
 
 #products__cards {
   padding: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 #products__cards div {
   border: 0.2rem solid #CA6F1E;
-  width: 30rem;
-  height: 30rem;
+  border-radius: 5%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  #products__cards div {
+    min-width: 20rem;
+    width: 45%;
+    margin: 0 0.5rem 2rem 0.5rem;
+  }
+}
+
+@media (min-width: 1045px) {
+  #products__cards div {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1385px) {
+  #products__cards div {
+    width: 22%;
+  }
+}
+
+@media (min-width: 1725px) {
+  #products__cards div {
+    width: 19%;
+  }
 }
 
 #products__cards div img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 15rem;
+}
+
+#products__cards div span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem;
 }
 /*# sourceMappingURL=styles.css.map */
