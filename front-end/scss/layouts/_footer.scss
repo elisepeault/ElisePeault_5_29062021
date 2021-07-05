@@ -5,10 +5,16 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 1.5rem;
+    @media(min-width: 768px) {
+        flex-direction: row;
+    }
     h2 {
         color: rgb(253, 253, 251);
         padding-top: 0;
         font-size: 1.4rem;
+        @media(min-width: 768px) {
+            padding-bottom: 0;
+        }
     }
     div {
         display: flex;

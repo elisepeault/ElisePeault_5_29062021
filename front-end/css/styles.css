@@ -6263,10 +6263,25 @@ footer {
   padding: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 footer h2 {
   color: #fdfdfb;
   padding-top: 0;
   font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  footer h2 {
+    padding-bottom: 0;
+  }
 }
 
 footer div {
