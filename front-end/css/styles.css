@@ -127,6 +127,12 @@ footer ul {
   }
 }
 
+@media (min-width: 1350px) {
+  .company-description {
+    padding: 0 20rem 0 20rem;
+  }
+}
+
 .company-description__container {
   background-color: #b8e6e6;
   margin: auto;
