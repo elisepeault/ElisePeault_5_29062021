@@ -12,12 +12,12 @@ nav {
         @media(min-width: 768px) {
             padding-left: 1.5rem;
         }
-    }
-    .brand-logo h1 {
-        padding-left: 0.5rem;
-        transition: color 0.5s;
-        &:hover {
-            color: $secondary-color;
+        h1 {
+            padding-left: 0.5rem;
+            transition: color 0.5s;
+            &:hover {
+                color: $secondary-color;
+            }
         }
     }
     .shopping-cart {
