@@ -15,6 +15,7 @@ nav {
     }
     .brand-logo h1 {
         padding-left: 0.5rem;
+        transition: color 0.5s;
         &:hover {
             color: $secondary-color;
         }

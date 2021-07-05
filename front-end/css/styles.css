@@ -6222,6 +6222,8 @@ nav a {
 
 nav .brand-logo h1 {
   padding-left: 0.5rem;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 nav .brand-logo h1:hover {
