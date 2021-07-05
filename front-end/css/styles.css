@@ -6253,20 +6253,39 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 1.5rem;
 }
 
-footer a {
+footer h2 {
+  color: #fdfdfb;
+  padding-top: 0;
+  font-size: 1.4rem;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer div a {
   font-size: 2rem;
   padding: 0 2rem 0 2rem;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
 
-footer a:hover {
+footer div a:hover {
   color: #b8e6e6;
 }
 
