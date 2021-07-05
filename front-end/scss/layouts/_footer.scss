@@ -4,9 +4,13 @@ footer {
     background-color: $primary-color;
     color: rgb(253, 253, 251);
     display: flex;
+    justify-content: center;
     padding: 1.5rem;
-    ul {
-        display: flex;
-        align-items: center;
+    a {
+        font-size: 2rem;
+        padding: 0 2rem 0 2rem;
+        &:hover {
+            color: $secondary-color;
+        }
     }
 }
