@@ -6231,6 +6231,8 @@ nav .brand-logo h1:hover {
 nav .shopping-cart {
   font-size: 1.5rem;
   padding-right: 0.5rem;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 @media (min-width: 768px) {
@@ -6258,6 +6260,8 @@ footer {
 footer a {
   font-size: 2rem;
   padding: 0 2rem 0 2rem;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 footer a:hover {
