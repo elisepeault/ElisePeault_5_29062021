@@ -70,19 +70,7 @@ fetch("http://localhost:3000/api/teddies/")
 )
 
 
-// Create instance for the class "Teddy" (EXAMPLE)
-/*let teddy1 = new Teddy(
-    "5be9c8541c9d440000665243", 
-    "Norbert", 
-    2900, 
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "teddy_1.jpg", 
-    )
-*/
 
-// add "teddy" cards to the "teddies" array
-//teddies.push(teddy1);
-//teddies.push(teddy1);
 
 
 
