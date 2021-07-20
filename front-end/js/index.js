@@ -11,6 +11,7 @@ class Teddy {
 // Array that contain all the "teddy"cards
 let teddies = [];
 
+
 // fetch data via the api, then parse the response in json format, then display the data in the browser console
 fetch("http://localhost:3000/api/teddies/")
     .then(response => response.json())
