@@ -50,7 +50,7 @@ fetch("http://localhost:3000/api/teddies/")
 
             // Create a SPAN for the PRICE
             let priceElt = document.createElement("SPAN");
-            priceElt.appendChild(document.createTextNode(teddies[i].price));
+            priceElt.appendChild(document.createTextNode(teddies[i].price + " €"));
             newElt.appendChild(priceElt);
 
             let buttonElt = document.createElement("BUTTON");

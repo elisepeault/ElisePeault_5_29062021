@@ -63,8 +63,10 @@
         }
         span {
             font-size: 1.3rem;
-            font-weight: bold;
             padding: 1rem;
+            &:nth-child(2) {
+                font-weight: bold;
+            }
 
         }
         button {
