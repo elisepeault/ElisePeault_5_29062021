@@ -12,6 +12,24 @@ class Teddy {
 let teddies = [];
 
 
+// Functions for the creation of elements in "products__cards"
+const addContent = (type_element,name,div) =>{
+    const elt = document.createElement(type_element); 
+    elt.appendChild(document.createTextNode(name)); 
+    div.appendChild(elt); 
+}
+const addImage = (src,alt,div) => {
+    const image = document.createElement("IMG");
+    image.src = src;  
+    image.alt = alt;  //same alt for all photos
+    div.appendChild(image);
+}
+const addButton =(button_text,div) => {
+    const button = document.createElement("BUTTON");
+    button.appendChild(document.createTextNode(button_text));
+    div.appendChild(button);
+}
+
 // fetch data via the api, then parse the response in json format, then display the data in the browser console
 fetch("http://localhost:3000/api/teddies/")
     .then(response => response.json())
@@ -36,32 +54,18 @@ fetch("http://localhost:3000/api/teddies/")
 
             // Create a DIV for the card
             let newElt = document.createElement("DIV");
-
-            // Create a SPAN for the IMG
-            let imgElt = document.createElement("IMG"); // <img >
-            imgElt.src = teddies[i].imageUrl;  
-            //imgElt.alt = teddies[i].name;     => on peut ajouter un alt si on veut mais ce sera le même pour tous les éléments si on met du texte
-            newElt.appendChild(imgElt);
-
-            // Create a SPAN for the NAME
-            let nameElt = document.createElement("SPAN"); //<span> </span>
-            nameElt.appendChild(document.createTextNode(teddies[i].name)); // 3546546546 & dans second temps => <span> 3546546546 </span>
-            newElt.appendChild(nameElt); //<div> <span> 3546546546 </span></div>
-
-            // Create a SPAN for the PRICE
-            let priceElt = document.createElement("SPAN");
-            priceElt.appendChild(document.createTextNode(teddies[i].price /100 + " €"));
-            newElt.appendChild(priceElt);
-
-            let buttonElt = document.createElement("BUTTON");
-            buttonElt.appendChild(document.createTextNode("Voir le produit"));
-            newElt.appendChild(buttonElt);
-
+            // Add an IMG
+            addImage(teddies[i].imageUrl,teddies[i].name,newElt);
+            // Add a SPAN for the NAME
+            addContent("span",teddies[i].name,newElt);
+            // Add a SPAN for the PRICE
+            addContent("span",teddies[i].price /100 + " €",newElt);
+            // Add a button (link to open the product page)
+            addButton("Voir le produit",newElt);
 
             // Insert our new element in the DOM => in teddyCard (in the html container : products__cards) 
             teddyCard.appendChild(newElt);
 
-        // Réutiliser la même variable plutot que en créer plein ("idElt" , "nameELT") ... peut être une boucle ? 
         // Test console
         /*console.log("Object numéro : " + [i]);
         console.log(teddies[i].imageUrl);
