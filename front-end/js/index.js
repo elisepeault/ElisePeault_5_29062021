@@ -1,6 +1,6 @@
 class Teddy {
-    constructor(id, name, price, description, imageUrl) {
-        this.id = id;
+    constructor(_id, name, price, description, imageUrl) {
+        this._id = _id;
         this.name = name;
         this.price = price;
         this.description = description;
@@ -27,8 +27,10 @@ const addImage = (src,alt,div) => {
 const addButton =(button_text,div) => {
     const button = document.createElement("BUTTON");
     button.appendChild(document.createTextNode(button_text));
+    //button.setAttribute("href", "product.html");
     div.appendChild(button);
 }
+
 
 // fetch data via the api, then parse the response in json format, then display the data in the browser console
 fetch("http://localhost:3000/api/teddies/")
@@ -37,7 +39,7 @@ fetch("http://localhost:3000/api/teddies/")
         console.log(data);
         for(var key in data) {
             let teddy = new Teddy (
-                data[key].id,
+                data[key]._id,
                 data[key].name,
                 data[key].price,
                 data[key].description,
@@ -65,16 +67,9 @@ fetch("http://localhost:3000/api/teddies/")
 
             // Insert our new element in the DOM => in teddyCard (in the html container : products__cards) 
             teddyCard.appendChild(newElt);
-
-        // Test console
-        /*console.log("Object numéro : " + [i]);
-        console.log(teddies[i].imageUrl);
-        console.log(teddies[i].name);
-        console.log(teddies[i].price);*/
         }
     }
 )
-
 
 
 

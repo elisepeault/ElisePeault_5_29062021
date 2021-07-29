@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orinounours est une entreprise familiale qui confectionne des ours en peluche à la main. Tous nos nounours sont réalisés en France avec des matériaux de qualité. ">
+    <title>Orinounours - Boutique d'ours en peluche fait main en France</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="front-end/images/favicon.png">
+    
+    <!-- Google Fonts --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="front-end/css/styles.css" >
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="brand-logo" href="index.html" aria-label="Accueil" title="Accueil">
+                <img src="front-end/images/favicon.png" alt="logo Orinounours" width="35px" height="35px">
+                <h1>Orinounours</h1>
+            </a>
+            <a class="shopping-cart" href= "" title="Panier" aria-label="Panier">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product">
+            <h1 class="product__name"></h1>
+            <img class="product__image" src="" alt="">
+            <div class="product__information">
+                <span class="product__information__price"></span>
+                <span class="product__information__id"></span>
+                <span class="product__information__description"></span>
+            </div>
+            <div class="product__colors">
+                <label for="select-color">Couleur :</label>
+                <select name="color" id="select-color"></select>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <h2>Contact & Actualités :</h2>
+        <div >
+            <a href="mailto:contact-orinounours@gmail.com" aria-label="Email" title="Email ">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/?hl=fr" aria-label="Instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://fr-fr.facebook.com/" aria-label="Facebook" title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="front-end/js/product.js"></script>
+
+</body>
+
+</html>
+
