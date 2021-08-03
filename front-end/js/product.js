@@ -1,35 +1,14 @@
-let params = new URL(document.location).searchParams;
-let _id = params.get("_id");
+// Pick the parameter "teddyId" in each url 
+let urlData = new URL ("http://localhost:3000/api/teddies/:_id");
+let params = new URLSearchParams(window.location.search);
+let _id = params.get("teddyId");
 
-class TeddyPage {
-    constructor(_id, name, price, description, imageUrl, colors) {
-        this._id = _id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.colors = colors;
-    }
-}
-
-let colors = [];
-
-
-fetch("http://localhost:3000/api/teddies/:_id")
+//fetch data via the api => get the description product matching with each id
+fetch("http://localhost:3000/api/teddies/" + _id)
     .then(response => response.json())
     .then(data =>  {
         console.log(data);
-        for(var key in data) {
-            let teddyInfos = new TeddyPage (
-                data[key].id,
-                data[key].name,
-                data[key].price,
-                data[key].description,
-                data[key].imageUrl       
-                )
-            //teddies.push(teddyInfos);
-        }
-    })
+    });
 
 
 
