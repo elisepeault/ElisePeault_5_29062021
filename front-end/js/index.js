@@ -54,7 +54,7 @@ fetch("http://localhost:3000/api/teddies/")
             teddies.push(teddy);
         }
     
-        // Search an element with its ID 
+        // Search the div that will contain the teddy cards with its ID 
         let teddyCard = document.getElementById("products__cards");
 
         // Loop for => on the "teddies" array
