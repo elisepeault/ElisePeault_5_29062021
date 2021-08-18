@@ -82,28 +82,31 @@ const productName = document.querySelector(".product__name");
 const productImage = document.querySelector(".product__image");
 const productPrice = document.querySelector(".product__price");
 
+// Local Storage : stock informations about the product in local storage => to use these data in the shopping cart
+// const cart = {};      => Ajouter objet ???
+let productsInCart = [];
+
 // addEventListener => Listen to the action on the button & send the cart
 addToCartButton.addEventListener("click", () => {
-    alert("Le nounours a bien été ajouté au panier !");
-    // Create the product that will be added to the cart
-    let productAddedToCart = {
-        name : productName.innerHTML,
-        image : productImage.innerHTML,
-        price : productImage.innerHTML,
-        _id : _id,
-    };
-
-    // Local Storage : stock informations about the product in local storage => to use these data in the shopping cart
-    let productsInCart = [];
+    
+    //alert("Le nounours a été ajouté au panier !");
 
     //If the local Storage contain products => we collect the data & put them in the array (JSON.parse => translate JSON format into a Js object)
     if (localStorage.getItem("products") !== null) {
         productsInCart = JSON.parse(localStorage.getItem("products"));
     //But if the local storage is empty => we fill it 
     } else {
+        // Create the product that will be added to the cart
+        let productAddedToCart = {
+            name : productName.innerHTML,
+            image : productImage.innerHTML,
+            price : productPrice.innerHTML,
+            _id : _id,
+        };
         productsInCart.push(productAddedToCart);
         localStorage.setItem("products", JSON.stringify(productsInCart));
     }
+
 
 })
 
