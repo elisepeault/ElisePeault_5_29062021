@@ -71,9 +71,9 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     });
 
 
-/*--------------------------- SHOPPING CART ---------------------------
+    /*--------------------------- SHOPPING CART ---------------------------
 Collect the data of a selected product & send it to the cart*/
-
+/*
 // Select the button : "add to the shopping cart"
 const addToCartButton = document.querySelector(".add-to-cart");
 
@@ -81,6 +81,7 @@ const addToCartButton = document.querySelector(".add-to-cart");
 const productName = document.querySelector(".product__name");
 const productImage = document.querySelector(".product__image");
 const productPrice = document.querySelector(".product__price");
+
 
 // Local Storage : stock informations about the product in local storage => to use these data in the shopping cart
 // const cart = {};      => Ajouter objet ???
@@ -94,6 +95,7 @@ addToCartButton.addEventListener("click", () => {
     //If the local Storage contain products => we collect the data & put them in the array (JSON.parse => translate JSON format into a Js object)
     if (localStorage.getItem("products") !== null) {
         productsInCart = JSON.parse(localStorage.getItem("products"));
+        
     //But if the local storage is empty => we fill it 
     } else {
         // Create the product that will be added to the cart
@@ -109,13 +111,49 @@ addToCartButton.addEventListener("click", () => {
 
 
 })
+*/
+
+// Select the button : "add to the shopping cart"
+//const addToCartButton = document.querySelector(".add-to-cart");
+const addToCartButton = document.getElementById("test");
+// Select details of the product 
+const productName = document.querySelector(".product__name");
+const productImage = document.querySelector(".product__image");
+const productPrice = document.querySelector(".product__price");
+
+// Select the p "cart-products" in the cart html to display the selected products
+const cartProducts = document.querySelector("#cart-products");
+
+addToCartButton.addEventListener("click",()=>{
+    const tab=[];
+    const productAddedToCart = {
+        name : "test",
+        image : "ig",
+        price :30 ,
+    }
+
+    tab.push(productAddedToCart)
+
+    localStorage.setItem ("productAddedToCart", JSON.stringify(tab));
+})
+// Add an object to the local storage
+/*addToCartButton[0].onclick = () => { 
+    const productAddedToCart = {
+        name : productName.innerHTML,
+        image : productImage.innerHTML,
+        price : productPrice.innerHTML,
+    }
+
+    localStorage.setItem ("productAddedToCart", JSON.stringify("productAddedToCart"));
+}*/
+
+
 
 
 
 
 
     //LOCAL STORAGE :
-    //monStockage = localStorage;
     // ajouter un item : localStorage.setItem('monChat', 'Tom');   
     // setItem(key, value) => key et value sont forcément des chaines de caractères
     // lire un article : let cat = localStorage.getItem('myCat');
