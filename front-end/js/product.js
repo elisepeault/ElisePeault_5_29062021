@@ -75,45 +75,11 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     });
 
 
-/*
 
-// Local Storage : stock informations about the product in local storage => to use these data in the shopping cart
-// const cart = {};      => Ajouter objet ???
-let productsInCart = [];
-
-// addEventListener => Listen to the action on the button & send the cart
-addToCartButton.addEventListener("click", () => {
-    
-    //alert("Le nounours a été ajouté au panier !");
-
-    //If the local Storage contain products => we collect the data & put them in the array (JSON.parse => translate JSON format into a Js object)
-    if (localStorage.getItem("products") !== null) {
-        productsInCart = JSON.parse(localStorage.getItem("products"));
-        
-    //But if the local storage is empty => we fill it 
-    } else {
-        // Create the product that will be added to the cart
-        let productAddedToCart = {
-            name : productName.innerHTML,
-            image : productImage.innerHTML,
-            price : productPrice.innerHTML,
-            _id : _id,
-        };
-        productsInCart.push(productAddedToCart);
-        localStorage.setItem("products", JSON.stringify(productsInCart));
-    }
-
-
-})
-*/
-
-    /*--------------------------- SHOPPING CART ---------------------------
-Collect the data of a selected product & send it to the cart*/
-
+    /*--------------------------- LOCAL STORAGE ---------------------------
+    Collect the data of a selected product & store it in the local storage*/
 
 // Select the button : "add to the shopping cart"
-//const addToCartButton = document.querySelector(".add-to-cart");
-//const addToCartButton = document.getElementById("idTest");
 const addToCartButton = document.getElementById("button-add-to-cart");
 
 // Select details of the product 
@@ -121,32 +87,28 @@ const productName = document.querySelector(".product__name");
 const productImage = document.querySelector(".product__image");
 const productPrice = document.querySelector(".product__price");
 
+
 // Select the p "cart-products" in the cart html to display the selected products
 const cartProducts = document.querySelector("#cart-products");
 
 // Add an object to the local storage
+//Rajouter couleur ???????????????????????????????
 addToCartButton.addEventListener("click", () => {
     const productsInCart = [];
     const productAddedToCart = {
-        name : productName,
-        image : productImage,
-        price : productPrice,
+        name : productData.name,
+        image : productData.imageUrl,
+        price : productData.price /100 + " €",
     }
-
-    /*  Rajouter ID à la place de class pour name, image and price ?
-        Rajouter couleur ????
-        const productAddedToCart = {
-        name : "test",
-        image : "ig",
-        price :30 ,
-    }
-    */ 
 
     productsInCart.push(productAddedToCart)
 
     localStorage.setItem ("productAddedToCart", JSON.stringify(productsInCart));
 })
 
+
+    //alert("Le nounours a été ajouté au panier !");
+    //ou => "nom du nounours" a été ajouté au panier ! 
 
 
 
