@@ -26,15 +26,17 @@ const addSelect = (div, className) => {
     div.appendChild(select);
 }
 
-const addButton =(div, className) => {
+/*const addButton =(div, className, idName) => {
     const a = document.createElement('a');
     // Build a button 
     const button = document.createElement("BUTTON");
     button.textContent="Ajouter au panier";
     button.classList.add(className);
+    button.id = idName;
     a.appendChild(button);
     div.appendChild(a);
 }
+*/
 
 // Pick the parameter "teddyId" in each url 
 let urlData = new URL ("http://localhost:3000/api/teddies/:_id");
@@ -62,8 +64,10 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         addContent("p", productData.description, globalDiv, "product__description");
         // Add a SELECT for the color choice
         addSelect(globalDiv, "product__color");
+        /*
         // Add a BUTTON to Add to the cart
-        addButton(globalDiv, "add-to-cart");
+        addButton(globalDiv, "add-to-cart", "idTest");
+        */
 
         // Insert our div :"globalDiv" in the DOM => in teddyPage => in the html container : product-page
         teddyPage.appendChild(globalDiv);
@@ -71,17 +75,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     });
 
 
-    /*--------------------------- SHOPPING CART ---------------------------
-Collect the data of a selected product & send it to the cart*/
 /*
-// Select the button : "add to the shopping cart"
-const addToCartButton = document.querySelector(".add-to-cart");
-
-// Select details of the product 
-const productName = document.querySelector(".product__name");
-const productImage = document.querySelector(".product__image");
-const productPrice = document.querySelector(".product__price");
-
 
 // Local Storage : stock informations about the product in local storage => to use these data in the shopping cart
 // const cart = {};      => Ajouter objet ???
@@ -113,9 +107,15 @@ addToCartButton.addEventListener("click", () => {
 })
 */
 
+    /*--------------------------- SHOPPING CART ---------------------------
+Collect the data of a selected product & send it to the cart*/
+
+
 // Select the button : "add to the shopping cart"
 //const addToCartButton = document.querySelector(".add-to-cart");
-const addToCartButton = document.getElementById("test");
+//const addToCartButton = document.getElementById("idTest");
+const addToCartButton = document.getElementById("button-add-to-cart");
+
 // Select details of the product 
 const productName = document.querySelector(".product__name");
 const productImage = document.querySelector(".product__image");
@@ -124,31 +124,28 @@ const productPrice = document.querySelector(".product__price");
 // Select the p "cart-products" in the cart html to display the selected products
 const cartProducts = document.querySelector("#cart-products");
 
-addToCartButton.addEventListener("click",()=>{
-    const tab=[];
+// Add an object to the local storage
+addToCartButton.addEventListener("click", () => {
+    const productsInCart = [];
     const productAddedToCart = {
+        name : productName,
+        image : productImage,
+        price : productPrice,
+    }
+
+    /*  Rajouter ID à la place de class pour name, image and price ?
+        Rajouter couleur ????
+        const productAddedToCart = {
         name : "test",
         image : "ig",
         price :30 ,
     }
+    */ 
 
-    tab.push(productAddedToCart)
+    productsInCart.push(productAddedToCart)
 
-    localStorage.setItem ("productAddedToCart", JSON.stringify(tab));
+    localStorage.setItem ("productAddedToCart", JSON.stringify(productsInCart));
 })
-// Add an object to the local storage
-/*addToCartButton[0].onclick = () => { 
-    const productAddedToCart = {
-        name : productName.innerHTML,
-        image : productImage.innerHTML,
-        price : productPrice.innerHTML,
-    }
-
-    localStorage.setItem ("productAddedToCart", JSON.stringify("productAddedToCart"));
-}*/
-
-
-
 
 
 
