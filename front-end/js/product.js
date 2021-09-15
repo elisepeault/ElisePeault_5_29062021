@@ -69,7 +69,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         addButton(globalDiv, "add-to-cart", "idTest");
         */
 
-        // Insert our div :"globalDiv" in the DOM => in teddyPage => in the html container : product-page
+        // Insert the div :"globalDiv" in the DOM => in teddyPage => in the html container : product-page
         teddyPage.appendChild(globalDiv);
 
     });
@@ -82,17 +82,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 // Select the button : "add to the shopping cart"
 const addToCartButton = document.getElementById("button-add-to-cart");
 
-// Select details of the product 
-const productName = document.querySelector(".product__name");
-const productImage = document.querySelector(".product__image");
-const productPrice = document.querySelector(".product__price");
-
-
-// Select the p "cart-products" in the cart html to display the selected products
-const cartProducts = document.querySelector("#cart-products");
-
 // Add an object to the local storage
-//Rajouter couleur ???????????????????????????????
 addToCartButton.addEventListener("click", () => {
     const productsInCart = [];
     const productAddedToCart = {
@@ -104,11 +94,18 @@ addToCartButton.addEventListener("click", () => {
     productsInCart.push(productAddedToCart)
 
     localStorage.setItem ("productAddedToCart", JSON.stringify(productsInCart));
+
 })
 
 
-    //alert("Le nounours a été ajouté au panier !");
-    //ou => "nom du nounours" a été ajouté au panier ! 
+/* To Do ? */ 
+// = mettre plusieurs nounours dans le tableau ?
+//for (let i = 0; i < localStorage.length; i++) {}
+
+//alert("Le nounours a été ajouté au panier !");
+//ou => "nom du nounours" a été ajouté au panier ! 
+
+// Rajouter couleur ???
 
 
 

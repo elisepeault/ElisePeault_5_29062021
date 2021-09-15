@@ -21,7 +21,7 @@ const addContent = (type_element,name,div) =>{
 const addImage = (src,alt,div) => {
     const image = document.createElement("IMG");
     image.src = src;  
-    image.alt = alt;  //same alt for all photos
+    image.alt = alt;  
     div.appendChild(image);
 }
 const addButton =(id,div) => {
