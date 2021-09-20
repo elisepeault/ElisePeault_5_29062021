@@ -79,48 +79,42 @@ fetch("http://localhost:3000/api/teddies/" + _id)
     /*--------------------------- LOCAL STORAGE ---------------------------
     Collect the data of a selected product & store it in the local storage*/
 
+
 // Select the button : "add to the shopping cart"
 const addToCartButton = document.getElementById("button-add-to-cart");
 
 // Add an object to the local storage
 addToCartButton.addEventListener("click", () => {
-    const productsInCart = [];
-    const productAddedToCart = {
+    let productAddedToCart = {
         name : productData.name,
         image : productData.imageUrl,
         price : productData.price /100 + " €",
-    }
+    };
 
-    productsInCart.push(productAddedToCart)
+    let productsInCart = [];
 
-    localStorage.setItem ("productAddedToCart", JSON.stringify(productsInCart));
-
+// if there are products in the local storage : the data is stocked in the array "productsInCart" and saved in the local storage 
+if (localStorage.getItem("products") !== null) {
+    productsInCart = JSON.parse(localStorage.getItem("products"));
+}
+// but if the local storage is empty : products (in the array) are pushed to the local storage
+    productsInCart.push(productAddedToCart);
+    localStorage.setItem("products", JSON.stringify(productsInCart));
 })
 
 
-/* To Do ? */ 
-// = mettre plusieurs nounours dans le tableau ?
-//for (let i = 0; i < localStorage.length; i++) {}
+// Ajouter fonction globale !!!!!!!!
+//function addToLocalStorage () {}
+
 
 //alert("Le nounours a été ajouté au panier !");
 //ou => "nom du nounours" a été ajouté au panier ! 
 
-// Rajouter couleur ???
 
+/* "Clear the cart" Button */ 
+//const addToCartButton = document.getElementById("button-add-to-cart");
 
+// Add an object to the local storage
+addToCartButton.addEventListener("click", () => {
 
-    //LOCAL STORAGE :
-    // ajouter un item : localStorage.setItem('monChat', 'Tom');   
-    // setItem(key, value) => key et value sont forcément des chaines de caractères
-    // lire un article : let cat = localStorage.getItem('myCat');
-    // supprimer un élément : localStorage.removeItem('myCat');
-    // supprimer tous les éléments du local storage : localStorage.clear();
-    // localStorage.key(index) => on remplace index par le numero de l'item recherché
-    // localStorage.length => pour savoir le nombre d'item dans notre local storage
-
-    // looping pour lister les différents items du local storage : 
-    /* for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i)
-        console.log(key, localStorage.getItem(key))
-    }
-    */ 
+})
