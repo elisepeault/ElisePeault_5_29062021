@@ -21,3 +21,12 @@ for (let product in local) {
     productPrice.innerHTML = local[product].price;
 
 }
+
+
+/* "Clear the cart" Button */ 
+const clearTheCartButton = document.getElementById("clear-cart-button");
+
+// When we click on the button "clearTheCartButton" : the cart and the local storage are emptied
+clearTheCartButton.addEventListener("click", () => {
+    localStorage.clear();
+});

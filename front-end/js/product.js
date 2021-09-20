@@ -100,21 +100,23 @@ if (localStorage.getItem("products") !== null) {
 // but if the local storage is empty : products (in the array) are pushed to the local storage
     productsInCart.push(productAddedToCart);
     localStorage.setItem("products", JSON.stringify(productsInCart));
-})
+});
+
+
 
 
 // Ajouter fonction globale !!!!!!!!
+// Avoir une fonction main qui contient toutes les fonctions de la page 
+/* ex:   
+function main() {
+  displayCart();
+  countTotalInCart();
+  toEmptyCart();
+  checkFormAndPostRequest();
+}
+*/
 //function addToLocalStorage () {}
 
 
 //alert("Le nounours a été ajouté au panier !");
 //ou => "nom du nounours" a été ajouté au panier ! 
-
-
-/* "Clear the cart" Button */ 
-//const addToCartButton = document.getElementById("button-add-to-cart");
-
-// Add an object to the local storage
-addToCartButton.addEventListener("click", () => {
-
-})
