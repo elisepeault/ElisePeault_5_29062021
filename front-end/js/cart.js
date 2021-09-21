@@ -7,17 +7,21 @@ const local = JSON.parse(localStorage.getItem("products"));
 // Display products saved in the local storage onto the cart page
 for (let product in local) {
 
+    let productDiv = document.createElement("div");
+    cart.appendChild(productDiv);
+    productDiv.classList.add("product-div");
+
     let productImage = document.createElement("IMG");
-    cart.appendChild(productImage);
+    productDiv.appendChild(productImage);
     productImage.src = local[product].image;
     productImage.alt = local[product].name;  
 
     let productName = document.createElement("div");
-    cart.appendChild(productName);
+    productDiv.appendChild(productName);
     productName.innerHTML = local[product].name;
 
     let productPrice = document.createElement("div");
-    cart.appendChild(productPrice);
+    productDiv.appendChild(productPrice);
     productPrice.innerHTML = local[product].price;
 
 }
