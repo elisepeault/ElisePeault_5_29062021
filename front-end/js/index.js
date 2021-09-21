@@ -24,7 +24,7 @@ const addImage = (src,alt,div) => {
     image.alt = alt;  
     div.appendChild(image);
 }
-const addButton =(id,div) => {
+const addButton =(id, className, div) => {
     const a = document.createElement('a');
     // Build url + id
     let url = new URL (window.location.origin + '/product.html');
@@ -32,6 +32,7 @@ const addButton =(id,div) => {
     a.href = url.href;
     // Build a button 
     const button = document.createElement("BUTTON");
+    button.classList.add(className);
     button.textContent="Voir le produit";
     a.appendChild(button);
     div.appendChild(a);
@@ -69,7 +70,7 @@ fetch("http://localhost:3000/api/teddies/")
             // Add a SPAN for the PRICE
             addContent("span",teddies[i].price /100 + " €",newElt);
             // Add a button (link to open the product page)
-            addButton(teddies[i]._id, newElt);
+            addButton(teddies[i]._id, "button", newElt);
 
             // Insert our new element in the DOM => in teddyCard (in the html container : products__cards) 
             teddyCard.appendChild(newElt);

@@ -6193,6 +6193,44 @@ p {
   font-size: 1.3rem;
 }
 
+.button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #b8e6e6;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #92d9d9;
+  opacity: 0;
+  -webkit-transition: opacity 0.7s;
+  transition: opacity 0.7s;
+}
+
+.button:hover::after {
+  opacity: 1;
+}
+
 nav {
   background-color: #2f4f4f;
   color: #fdfdfb;
@@ -6405,44 +6443,6 @@ footer div a:hover {
   font-weight: bold;
 }
 
-#products__cards div button {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #def3f3;
-  font-size: 1.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-#products__cards div button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-  background-color: #b8e6e6;
-  opacity: 0;
-  -webkit-transition: opacity 0.7s;
-  transition: opacity 0.7s;
-}
-
-#products__cards div button:hover::after {
-  opacity: 1;
-}
-
 #product-page div {
   background-color: #f9e6d5;
   width: 90%;
@@ -6502,44 +6502,6 @@ footer div a:hover {
   font-size: 1.3rem;
 }
 
-#button-add-to-cart {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #b8e6e6;
-  font-size: 1.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-#button-add-to-cart::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-  background-color: #92d9d9;
-  opacity: 0;
-  -webkit-transition: opacity 0.7s;
-  transition: opacity 0.7s;
-}
-
-#button-add-to-cart:hover::after {
-  opacity: 1;
-}
-
 .cart-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6579,43 +6541,5 @@ footer div a:hover {
 #cart-card div {
   font-size: 1.3rem;
   margin: 1em 0 0.5em 0;
-}
-
-#clear-cart-button {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #b8e6e6;
-  font-size: 1.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  border: none;
-  border-radius: 5%;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-#clear-cart-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-  background-color: #92d9d9;
-  opacity: 0;
-  -webkit-transition: opacity 0.7s;
-  transition: opacity 0.7s;
-}
-
-#clear-cart-button:hover::after {
-  opacity: 1;
 }
 /*# sourceMappingURL=styles.css.map */
