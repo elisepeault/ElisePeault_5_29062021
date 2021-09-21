@@ -4,7 +4,7 @@ const cart = document.getElementById("cart-card");
 //
 const local = JSON.parse(localStorage.getItem("products"));
 
-
+// Display products saved in the local storage onto the cart page
 for (let product in local) {
 
     let productImage = document.createElement("IMG");
@@ -30,3 +30,16 @@ const clearTheCartButton = document.getElementById("clear-cart-button");
 clearTheCartButton.addEventListener("click", () => {
     localStorage.clear();
 });
+
+
+// Ajouter fonction globale !!!!!!!!
+// Avoir une fonction main qui contient toutes les fonctions de la page 
+/* ex:   
+function main() {
+  displayCart();
+  countTotalInCart();
+  toEmptyCart();
+  checkFormAndPostRequest();
+}
+*/
+//function addToLocalStorage () {}

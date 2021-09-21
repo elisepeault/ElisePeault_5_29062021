@@ -97,7 +97,7 @@ addToCartButton.addEventListener("click", () => {
 if (localStorage.getItem("products") !== null) {
     productsInCart = JSON.parse(localStorage.getItem("products"));
 }
-// but if the local storage is empty : products (in the array) are pushed to the local storage
+// If the local storage is empty : products (in the array) are pushed to the local storage
     productsInCart.push(productAddedToCart);
     localStorage.setItem("products", JSON.stringify(productsInCart));
 });
