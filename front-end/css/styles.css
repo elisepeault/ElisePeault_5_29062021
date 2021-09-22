@@ -6502,6 +6502,7 @@ footer div a:hover {
   font-size: 1.3rem;
 }
 
+/* -------------------- CART --------------------*/
 .cart-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6519,13 +6520,11 @@ footer div a:hover {
   margin: auto;
   margin-top: 1em;
   margin-bottom: 3em;
-  padding: 1em;
+  padding: 1em 3em 1em 3em;
   max-width: 55em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -6534,12 +6533,9 @@ footer div a:hover {
 
 #cart-card img {
   height: 10rem;
-  /*@media (min-width : 440px) {
-
-        }
-        @media (min-width : 730px) {
-
-        }*/
+  width: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #cart-card div {
@@ -6551,17 +6547,38 @@ footer div a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
+@media (min-width: 570px) {
+  .product-div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+/* -------------------- FORM --------------------*/
+/*.form-title {
+
+}*/
 #cart-form {
   border: 0.3em solid #efbe92;
   width: 90%;
   margin: auto;
   margin-top: 1em;
   margin-bottom: 3em;
-  padding: 1em;
+  padding: 1em 3em 1em 3em;
   max-width: 55em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6576,7 +6593,11 @@ footer div a:hover {
   margin: 1em 0 0.5em 0;
 }
 
-#cart-form label, #cart-form input {
+#cart-form label {
   font-size: 1.3rem;
+}
+
+#cart-form input {
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=styles.css.map */
