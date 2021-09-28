@@ -9,7 +9,7 @@ const addContent = (type_element,name,div, className) =>{
 const addImage = (src,alt,div, className) => {
     const image = document.createElement("IMG");
     image.src = src;  
-    image.alt = alt;  //same alt for all photos
+    image.alt = alt; 
     image.classList.add(className);
     div.appendChild(image);
 }
@@ -64,10 +64,6 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         addContent("p", productData.description, globalDiv, "product__description");
         // Add a SELECT for the color choice
         addSelect(globalDiv, "product__color");
-        /*
-        // Add a BUTTON to Add to the cart
-        addButton(globalDiv, "add-to-cart", "idTest");
-        */
 
         // Insert the div :"globalDiv" in the DOM => in teddyPage => in the html container : product-page
         teddyPage.appendChild(globalDiv);
@@ -102,20 +98,6 @@ if (localStorage.getItem("products") !== null) {
     localStorage.setItem("products", JSON.stringify(productsInCart));
 });
 
-
-
-
-// Ajouter fonction globale !!!!!!!!
-// Avoir une fonction main qui contient toutes les fonctions de la page 
-/* ex:   
-function main() {
-  displayCart();
-  countTotalInCart();
-  toEmptyCart();
-  checkFormAndPostRequest();
-}
-*/
-//function addToLocalStorage () {}
 
 
 //alert("Le nounours a été ajouté au panier !");

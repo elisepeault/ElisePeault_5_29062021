@@ -41,7 +41,6 @@
 /* -------------------- FORM --------------------*/
 
 /*.form-title {
-
 }*/
 
 #cart-form {
@@ -62,5 +61,14 @@
     }
     input {
         font-size: 1.2rem;
+    }
+}
+
+#order-button {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    background-color: $tertiary-color;
+    &::after {
+        background-color: darken($tertiary-color, 10%);
     }
 }

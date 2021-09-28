@@ -6570,7 +6570,6 @@ footer div a:hover {
 
 /* -------------------- FORM --------------------*/
 /*.form-title {
-
 }*/
 #cart-form {
   border: 0.3em solid #efbe92;
@@ -6599,5 +6598,15 @@ footer div a:hover {
 
 #cart-form input {
   font-size: 1.2rem;
+}
+
+#order-button {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  background-color: #efbe92;
+}
+
+#order-button::after {
+  background-color: #e8a366;
 }
 /*# sourceMappingURL=styles.css.map */
