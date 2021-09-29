@@ -6568,6 +6568,17 @@ footer div a:hover {
   }
 }
 
+#total-costs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin-bottom: 2rem;
+  margin-right: 11rem;
+}
+
 /* -------------------- FORM --------------------*/
 /*.form-title {
 }*/

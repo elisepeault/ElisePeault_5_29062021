@@ -59,7 +59,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
         // Add an IMG
         addImage(productData.imageUrl, productData.name, globalDiv, "product__image");
         // Add a SPAN for the PRICE
-        addContent("span", productData.price /100 + " €", globalDiv, "product__price");
+        addContent("span", productData.price /100 + " €", globalDiv, "product__price"); 
         // Add a P for the DESCRIPTION
         addContent("p", productData.description, globalDiv, "product__description");
         // Add a SELECT for the color choice
@@ -84,7 +84,8 @@ addToCartButton.addEventListener("click", () => {
     let productAddedToCart = {
         name : productData.name,
         image : productData.imageUrl,
-        price : productData.price /100 + " €",
+        price : productData.price /100, //+ " €"
+        id : productData._id,
     };
 
     let productsInCart = [];
