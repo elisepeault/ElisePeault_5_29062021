@@ -28,43 +28,21 @@
                 <img src="front-end/images/favicon.png" alt="logo Orinounours" width="35px" height="35px">
                 <h1>Orinounours</h1>
             </a>
+            <a class="shopping-cart" href= "cart.html" title="Panier" aria-label="Panier">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
         </nav>
     </header>
 
     <main>
-        <!-- CART -->
-        <h2 class="cart-title">Panier</h2>
-        <div id="cart-card"></div>
-        <p id="total-costs"></p>
-        <button id="clear-cart-button" class="button">Nettoyer le panier</button>
-        <!-- FORM -->
-        <h2 class="form-title">Informations de livraison</h2>
-        <div id="cart-form">
-            <form action="" method="post" id="form">
-                <div class="cart-form_first-name">
-                    <label for="firstName">Prénom : </label>
-                    <input type="text" name="firstName" id="firstName" required>
-                </div>
-                <div class="cart-form_last-name">
-                    <label for="lastName">Nom : </label>
-                    <input type="text" name="lastName" id="lastName" required>
-                </div>
-                <div class="cart-form_address">
-                    <label for="address">Adresse : </label>
-                    <input type="text" name="address" id="address" required>
-                </div>
-                <div class="cart-form_city">
-                    <label for="city">Ville : </label>
-                    <input type="text" name="city" id="city" required>
-                </div>
-                <div class="cart-form_email">
-                    <label for="email">Email : </label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div id="error-message"></div>
-                <button type = "submit" id="order-button" class="button">Commander</button>
-            </form>
+        <div class="confirmation">
+            <h2 id="confirmation__message">Votre commande a bien été prise en compte !</h2>
+            <p id="confirmation__order-id"> Votre numéro de commande : 
+                <span id="order-id"></span>
+            </p>
         </div>
+
+
     </main>
 
     <footer>
@@ -83,7 +61,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="front-end/js/cart.js"></script>
+    <script src="front-end/js/order-confirmation.js"></script>
 
 </body>
 

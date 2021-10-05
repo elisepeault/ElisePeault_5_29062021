@@ -1,0 +1,15 @@
+.confirmation {
+    border: 0.3em solid darken($secondary-color, 15%);
+    width : 90%; 
+    margin: auto;
+    margin-top: 6em;
+    margin-bottom : 6em;
+    padding: 1em 1em 1em 1em;
+    max-width: 55em;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        padding-top: 1em;
+        font-size: 1.5rem;
+    }
+}

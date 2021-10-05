@@ -6443,6 +6443,28 @@ footer div a:hover {
   font-weight: bold;
 }
 
+.confirmation {
+  border: 0.3em solid #7fd2d2;
+  width: 90%;
+  margin: auto;
+  margin-top: 6em;
+  margin-bottom: 6em;
+  padding: 1em 1em 1em 1em;
+  max-width: 55em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.confirmation h2 {
+  padding-top: 1em;
+  font-size: 1.5rem;
+}
+
 #product-page div {
   background-color: #f9e6d5;
   width: 90%;

@@ -45,7 +45,7 @@ for (let product in local) {
   // Add a price for each product
   addProductContent("div", local[product].price + " €", productDiv);
 
-  // AJOUTER LA DIV PRODUIT (productDiv) A LA DIV GLOBALE(cartdiv) DANS LE DOM
+  // Add the productDiv to the cartDiv (main div that contains all of the productDiv) in the DOM
   cartDiv.appendChild(productDiv);
 
   // 
@@ -79,9 +79,6 @@ clearTheCartButton.addEventListener("click", () => {
 // Select the form element in the DOM
 const cartForm = document.getElementById("form");
 
-// Select the submit button of the form in the DOM
-let orderButton = document.getElementById("order-button");
-
 // Select each input of the form in the DOM
 let firstNameInput = document.getElementById("firstName");
 let lastNameInput = document.getElementById("lastName");
@@ -89,55 +86,81 @@ let addressInput = document.getElementById("address");
 let cityInput = document.getElementById("city");
 let emailInput = document.getElementById("email");
 
+// Select the error message of the form in the DOM
+let errorMessage = document.getElementById("error-message");
+
+// Select the submit button of the form in the DOM
+let orderButton = document.getElementById("order-button");
+
 // add the "on submit" event listener to the form
 cartForm.addEventListener("submit", function (e) {
+  
+  // Form fields validation
+  
   //prevent the page from reloading or naviguating away when we submit the form
-  e.preventDefault();
+  //e.preventDefault();
 
-// the array "purchasedProducts" will contain objects = the teddies that were purchased by the customer
-let purchasedProducts = [];
+  // REGEX for email validation 
 
-for (let product in local) {
-  purchasedProducts.push(local[product].id);
-}
+  let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-// the const "order" contains the object contact (information about the customer) and the array containing the purchased products
-const order = {
+  let emptyFieldRegex = /^[\s]/;
+
+  if (
+    emailRegex.test(emailInput) == false || 
+    emptyFieldRegex.test(emailInput) == true 
+    ) {
+    e.preventDefault();
+    console.log("Email non validé");
+  } else {
+    e.preventDefault();
+    console.log("Email validé");
+  }
+
+
+  // the array "purchasedProducts" will contain objects = the teddies that were purchased by the customer
+    let purchasedProducts = [];
+
+    for (let product in local) {
+      purchasedProducts.push(local[product].id);
+    }
+
+    // the const "order" contains the object contact (information about the customer) and the array containing the purchased products
+    const order = {
+      contact: {
+        firstName: firstNameInput.value,
+        lastName: lastNameInput.value,
+        address: addressInput.value,
+        city: cityInput.value,
+        email: emailInput.value,
+      },
+      products: purchasedProducts,
+    };
+    //console.log(order);
+
+  /* The BACK-END : Expects request to contain : 
   contact: {
-    firstName: firstNameInput.value,
-    lastName: lastNameInput.value,
-    address: addressInput.value,
-    city: cityInput.value,
-    email: emailInput.value,
-  },
-  products: purchasedProducts,
-};
-console.log(order);
+    firstName: string,
+    lastName: string,
+    address: string,
+    city: string,
+    email: string
+  }
+  products: [string] <-- array of product _id
+  */
 
-  fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(order), headers: {"Content-Type":"application/json"} })
-  .then(response => response.json())
-  .then((data) => {
-    console.log(data); 
-    //console.log(data.orderId); //numéro de commande à récupérer du back
-  })
-  .catch((error) => {
-    alert("Il y a eu une erreur : " + error);
-  });
+    fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(order), headers: {"Content-Type":"application/json"} })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data); 
+      localStorage.clear();
+      localStorage.setItem("orderId", data.orderId);
+
+      document.location.href = "order-confirmation.html";
+      //console.log(data.orderId); //numéro de commande à récupérer du back
+    })
+    .catch((error) => {
+      alert("Il y a eu une erreur : " + error);
+    });
 
 });
-
-
-
-/* !!!  DONNEES DU BACK END  !!! */
-
-//Expects request to contain:
-/*
-contact: {
-  firstName: string,
-  lastName: string,
-  address: string,
-  city: string,
-  email: string
-}
-products: [string] <-- array of product _id
-*/
