@@ -6447,8 +6447,8 @@ footer div a:hover {
   background-color: #daf2f2;
   width: 90%;
   margin: auto;
-  margin-top: 6em;
-  margin-bottom: 6em;
+  margin-top: 13em;
+  margin-bottom: 13em;
   padding: 1em 1em 1em 1em;
   max-width: 55em;
 }
@@ -6459,13 +6459,23 @@ footer div a:hover {
 }
 
 #confirmation__order-id {
+  font-weight: bold;
   padding: 2em 0 2em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#confirmation__order-id span {
+  padding: 1em 0 1em 0;
+  font-weight: normal;
 }
 
 #product-page div {

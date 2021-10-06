@@ -2,8 +2,8 @@
     background-color: lighten($secondary-color, 9%);
     width : 90%; 
     margin: auto;
-    margin-top: 6em;
-    margin-bottom : 6em;
+    margin-top: 13em;
+    margin-bottom : 13em;
     padding: 1em 1em 1em 1em;
     max-width: 55em;
     &__message {
@@ -11,8 +11,14 @@
         font-size: 1.5rem;
     }
     &__order-id {
+        font-weight: bold;
         padding: 2em 0 2em 0;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        span {
+            padding: 1em 0 1em 0;
+            font-weight: normal;
+        }
     }
 }
