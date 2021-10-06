@@ -95,19 +95,26 @@ cartForm.addEventListener("submit", function (e) {
   // REGEX for the email field validation 
   let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   // REGEX to check if a field is empty 
-  //let emptyFieldRegex = /^[\s]/;
+  let emptyFieldRegex = /^[\s]/;
 
-  //|| emptyFieldRegex.test(emailInput) == true 
-
-  // Once the order button "commander" is clicked : validation of fields form before allowing the POST request to be sent
+  //Check if the fields of the form are valid 
+  // if the email adress doesn't match the expected syntax : alert message
   if (
     emailRegex.test(emailInput.value) == false 
     ) {
     window.alert("La syntaxe de l'adresse email n'est pas valide.");
     e.preventDefault(); // prevent the page from reloading or naviguating away
+    //if one or many fields are empty : alert message
+  } else if (
+    emptyFieldRegex.test(firstNameInput.value) == true ||
+    emptyFieldRegex.test(lastNameInput.value) == true ||
+    emptyFieldRegex.test(addressInput.value) == true ||
+    emptyFieldRegex.test(cityInput.value) == true ||
+    emptyFieldRegex.test(emailInput.value) == true 
+  ) {
+    window.alert("Merci de remplir tous les champs du formulaire.");
+    // else => If fields are valid : purchased products & delivery info will be sent with the post request (details below)
   } else {
-    // If the email adress is valid : purchased products & delivery info will be sent with the post request (details below)
-  
 
     // the array "purchasedProducts" will contain objects = the teddies that were purchased by the customer
       let purchasedProducts = [];
