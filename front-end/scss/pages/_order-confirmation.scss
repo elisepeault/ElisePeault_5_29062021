@@ -1,13 +1,11 @@
 #confirmation {
-    background-color: lighten($secondary-color, 7%);
+    background-color: lighten($secondary-color, 9%);
     width : 90%; 
     margin: auto;
     margin-top: 6em;
     margin-bottom : 6em;
     padding: 1em 1em 1em 1em;
     max-width: 55em;
-    display: flex;
-    flex-direction: column;
     &__message {
         padding: 2em 0 2em 0;
         font-size: 1.5rem;

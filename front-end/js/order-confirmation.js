@@ -3,13 +3,13 @@
 // Select the span "order-id" in the DOM (to display the orderId)
 let orderIdSpan = document.getElementById("order-id");
 
-const displayOrderId = () => {
-    
-    let orderIdStorage = localStorage.getItem("orderId");
+// Get the orderId in the local storage
+let orderIdStorage = localStorage.getItem("orderId");
 
     if (orderIdStorage == null) {
-        orderIdSpan.innerHTML = "Erreur : Veuillez contacter le service client.";
+        orderIdSpan.innerHTML = "Il n'y a pas de numéro de commande. Veuillez contacter le service client.";
     } else {
-        orderIdSpan.innerHTML = ` ${orderIdStorage} `;
+        orderIdSpan.innerHTML = "&nbsp" + orderIdStorage;
+        localStorage.clear();
     }
-};
+

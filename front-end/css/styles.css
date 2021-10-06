@@ -6444,20 +6444,13 @@ footer div a:hover {
 }
 
 #confirmation {
-  background-color: #d2efef;
+  background-color: #daf2f2;
   width: 90%;
   margin: auto;
   margin-top: 6em;
   margin-bottom: 6em;
   padding: 1em 1em 1em 1em;
   max-width: 55em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 #confirmation__message {
