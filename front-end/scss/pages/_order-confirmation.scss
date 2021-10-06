@@ -1,5 +1,5 @@
-.confirmation {
-    border: 0.3em solid darken($secondary-color, 15%);
+#confirmation {
+    background-color: lighten($secondary-color, 7%);
     width : 90%; 
     margin: auto;
     margin-top: 6em;
@@ -8,8 +8,13 @@
     max-width: 55em;
     display: flex;
     flex-direction: column;
-    h2 {
+    &__message {
         padding: 2em 0 2em 0;
         font-size: 1.5rem;
+    }
+    &__order-id {
+        padding: 2em 0 2em 0;
+        display: flex;
+        justify-content: center;
     }
 }

@@ -6443,8 +6443,8 @@ footer div a:hover {
   font-weight: bold;
 }
 
-.confirmation {
-  border: 0.3em solid #7fd2d2;
+#confirmation {
+  background-color: #d2efef;
   width: 90%;
   margin: auto;
   margin-top: 6em;
@@ -6460,9 +6460,19 @@ footer div a:hover {
           flex-direction: column;
 }
 
-.confirmation h2 {
+#confirmation__message {
   padding: 2em 0 2em 0;
   font-size: 1.5rem;
+}
+
+#confirmation__order-id {
+  padding: 2em 0 2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #product-page div {

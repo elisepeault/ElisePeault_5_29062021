@@ -4,8 +4,7 @@
 let orderIdSpan = document.getElementById("order-id");
 
 const displayOrderId = () => {
-
-    //
+    
     let orderIdStorage = localStorage.getItem("orderId");
 
     if (orderIdStorage == null) {
