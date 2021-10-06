@@ -6461,7 +6461,7 @@ footer div a:hover {
 }
 
 .confirmation h2 {
-  padding-top: 1em;
+  padding: 2em 0 2em 0;
   font-size: 1.5rem;
 }
 
@@ -6541,7 +6541,7 @@ footer div a:hover {
   width: 90%;
   margin: auto;
   margin-top: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   padding: 1em 3em 1em 3em;
   max-width: 55em;
   display: -webkit-box;
@@ -6594,11 +6594,12 @@ footer div a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  margin-bottom: 2rem;
-  margin-right: 11rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 3em;
 }
 
 /* -------------------- FORM --------------------*/

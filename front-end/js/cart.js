@@ -86,57 +86,66 @@ let addressInput = document.getElementById("address");
 let cityInput = document.getElementById("city");
 let emailInput = document.getElementById("email");
 
-// Select the error message of the form in the DOM
-let errorMessage = document.getElementById("error-message");
-
 // Select the submit button of the form in the DOM
 let orderButton = document.getElementById("order-button");
 
-// add the "on submit" event listener to the form
+/* --- Add the "on submit" EVENT LISTENER to the form --- */ 
 cartForm.addEventListener("submit", function (e) {
   
-  // Form fields validation
-  
-  //prevent the page from reloading or naviguating away when we submit the form
-  //e.preventDefault();
-
-  // REGEX for email validation 
-
+  // REGEX for the email field validation 
   let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // REGEX to check if a field is empty 
+  //let emptyFieldRegex = /^[\s]/;
 
-  let emptyFieldRegex = /^[\s]/;
+  //|| emptyFieldRegex.test(emailInput) == true 
 
+  // Once the order button "commander" is clicked : validation of fields form before allowing the POST request to be sent
   if (
-    emailRegex.test(emailInput) == false || 
-    emptyFieldRegex.test(emailInput) == true 
+    emailRegex.test(emailInput.value) == false 
     ) {
-    e.preventDefault();
-    console.log("Email non validé");
+    window.alert("La syntaxe de l'adresse email n'est pas valide.");
+    e.preventDefault(); // prevent the page from reloading or naviguating away
   } else {
-    e.preventDefault();
-    console.log("Email validé");
+    // If the email adress is valid : purchased products & delivery info will be sent with the post request (details below)
+  
+
+    // the array "purchasedProducts" will contain objects = the teddies that were purchased by the customer
+      let purchasedProducts = [];
+
+      for (let product in local) {
+        purchasedProducts.push(local[product].id);
+      }
+
+      // the const "order" contains the object contact (info for the delivery) and the array products (purchased products)
+      const order = {
+        contact: {
+          firstName: firstNameInput.value,
+          lastName: lastNameInput.value,
+          address: addressInput.value,
+          city: cityInput.value,
+          email: emailInput.value,
+        },
+        products: purchasedProducts,
+      };
+      //console.log(order);
+
+      fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(order), headers: {"Content-Type":"application/json"} })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data); 
+        localStorage.clear();
+        localStorage.setItem("orderId", data.orderId);
+        // Redirect to the order-confirmation page (once the order is validated and the order id is saved in the local storage)
+        document.location.href = "order-confirmation.html";
+        //console.log(data.orderId); //numéro de commande à récupérer du back
+      })
+      .catch((error) => {
+        alert("Il y a eu une erreur : " + error);
+      });
+
   }
 
-
-  // the array "purchasedProducts" will contain objects = the teddies that were purchased by the customer
-    let purchasedProducts = [];
-
-    for (let product in local) {
-      purchasedProducts.push(local[product].id);
-    }
-
-    // the const "order" contains the object contact (information about the customer) and the array containing the purchased products
-    const order = {
-      contact: {
-        firstName: firstNameInput.value,
-        lastName: lastNameInput.value,
-        address: addressInput.value,
-        city: cityInput.value,
-        email: emailInput.value,
-      },
-      products: purchasedProducts,
-    };
-    //console.log(order);
+});
 
   /* The BACK-END : Expects request to contain : 
   contact: {
@@ -148,19 +157,3 @@ cartForm.addEventListener("submit", function (e) {
   }
   products: [string] <-- array of product _id
   */
-
-    fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(order), headers: {"Content-Type":"application/json"} })
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data); 
-      localStorage.clear();
-      localStorage.setItem("orderId", data.orderId);
-
-      document.location.href = "order-confirmation.html";
-      //console.log(data.orderId); //numéro de commande à récupérer du back
-    })
-    .catch((error) => {
-      alert("Il y a eu une erreur : " + error);
-    });
-
-});
