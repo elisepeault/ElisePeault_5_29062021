@@ -76,5 +76,7 @@ fetch("http://localhost:3000/api/teddies/")
             // Insert each new element in the DOM => in teddyCard (in the html container : products__cards) 
             teddyCard.appendChild(newElt);
         }
-    }
-)
+    })
+    .catch((error) => {
+        alert("Il y a eu une erreur : " + error);
+    });

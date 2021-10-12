@@ -58,9 +58,10 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 
         // Insert the div :"globalDiv" in the DOM => in teddyPage (in the html container : product-page)
         teddyPage.appendChild(globalDiv);
-
+    })
+    .catch((error) => {
+        alert("Il y a eu une erreur : " + error);
     });
-
 
 
 /*--------------------------- LOCAL STORAGE ---------------------------*/

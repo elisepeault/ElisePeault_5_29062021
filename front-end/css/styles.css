@@ -6167,7 +6167,7 @@ li {
   list-style-type: none;
 }
 
-/* FONTS */
+/* ----- FONTS ----- */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -6176,6 +6176,7 @@ h1, h2 {
   font-family: 'Finger Paint', cursive;
 }
 
+/* ----- ELEMENTS SPECIFICITIES ----- */
 h2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6231,6 +6232,7 @@ p {
   opacity: 1;
 }
 
+/* ----- HEADER TEMPLATE ----- */
 nav {
   background-color: #2f4f4f;
   color: #fdfdfb;
@@ -6285,6 +6287,7 @@ nav .shopping-cart:hover {
   color: #b8e6e6;
 }
 
+/* ----- FOOTER TEMPLATE ----- */
 footer {
   background-color: #2f4f4f;
   color: #fdfdfb;
@@ -6616,8 +6619,6 @@ footer div a:hover {
 }
 
 /* -------------------- FORM --------------------*/
-/*.form-title {
-}*/
 #cart-form {
   border: 0.3em solid #efbe92;
   width: 90%;
