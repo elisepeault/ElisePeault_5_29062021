@@ -22,7 +22,6 @@ const addProductImage = (src, alt, mainProductDiv) => {
 }
 const addProductContent = (type_element, name, mainProductDiv) =>{
     const productContent = document.createElement(type_element); 
-    //productContent.appendChild(document.createTextNode(name)); 
     productContent.innerHTML = name;
     mainProductDiv.appendChild(productContent);
 }
@@ -32,8 +31,7 @@ const addProductContent = (type_element, name, mainProductDiv) =>{
 
 // Declaration of the totalPrices variable (which will contains the total price of products in the cart) with a value of 0  
 let totalPrices = 0;
-
-// 
+ 
 for (let product in local) {
 
     // Add a Div for each product
@@ -118,7 +116,7 @@ cartForm.addEventListener("submit", function (e) {
         products: purchasedProducts,
     };
 
-    // Fetch data via the API, then parse the response in json format, then display the data TO DO !!!!!! send a request to the server => to fetch data via the api ?
+    // Fetch data via the API, then parse the response in json format, then display the data 
     fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(order), headers: {"Content-Type":"application/json"} })
         .then(response => response.json())
         .then((data) => {

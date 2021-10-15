@@ -1,4 +1,4 @@
-// Template named "Teddy" for "teddy" objects (teddy objects = products cards displayed on the index page)
+// Template named "Teddy" for the creation of "teddy" objects (teddy objects = products cards displayed on the index page)
 class Teddy {
     constructor(_id, name, price, description, imageUrl) {
         this._id = _id;
@@ -8,9 +8,6 @@ class Teddy {
         this.imageUrl = imageUrl;
     }
 }
-
-// Array that contains all the "teddy" objects
-let teddies = [];
 
 // Functions for the creation of elements in the div "products__cards"
 const addContent = (type_element, name, div) => {
@@ -38,24 +35,28 @@ const addButton = (id, className, div) => {
     div.appendChild(a);
 }
 
+// Create a card per product (based on the "Teddy" class) and put each product into the teddies array
+const createTeddyCard = (responseFetch, arrayOfTeddy) => {
+    for(var key in responseFetch) {
+        // Create a teddy object based on the Teddy class
+        let teddy = new Teddy (
+            responseFetch[key]._id,
+            responseFetch[key].name,
+            responseFetch[key].price,
+            responseFetch[key].description,
+            responseFetch[key].imageUrl       
+            )
+        // Push each teddy object in the teddies array
+        arrayOfTeddy.push(teddy);
+    }
+    return arrayOfTeddy
+}
 // Fetch data via the API, then parse the response in json format, then display the data 
 fetch("http://localhost:3000/api/teddies/")
     .then(response => response.json())
     .then(data =>  {
-        console.log(data);
-        for(var key in data) {
-            // Create a teddy object based on the Teddy class
-            let teddy = new Teddy (
-                data[key]._id,
-                data[key].name,
-                data[key].price,
-                data[key].description,
-                data[key].imageUrl       
-                )
-            // Push each teddy object in the teddies array
-            teddies.push(teddy);
-        }
-    
+        // Call the function createTeddyCard 
+        let teddies = createTeddyCard(data,[])
         // Search the div that will contain "teddy" objects (cards) with its ID 
         let teddyCard = document.getElementById("products__cards");
 
