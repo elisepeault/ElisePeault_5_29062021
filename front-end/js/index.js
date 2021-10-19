@@ -9,6 +9,7 @@ class Teddy {
     }
 }
 
+
 // Functions for the creation of elements in the div "products__cards"
 const addContent = (type_element, name, div) => {
     const elt = document.createElement(type_element); 
@@ -35,8 +36,9 @@ const addButton = (id, className, div) => {
     div.appendChild(a);
 }
 
-// Create a card per product (based on the "Teddy" class) and put each product into the teddies array
-const createTeddyCard = (responseFetch, arrayOfTeddy) => {
+
+// Create objects based on the Teddy class using the data obtained by the fetch request and stock it into an array
+const createDataArray = (responseFetch, arrayOfTeddy) => {
     for(var key in responseFetch) {
         // Create a teddy object based on the Teddy class
         let teddy = new Teddy (
@@ -49,14 +51,18 @@ const createTeddyCard = (responseFetch, arrayOfTeddy) => {
         // Push each teddy object in the teddies array
         arrayOfTeddy.push(teddy);
     }
+    // create an array
     return arrayOfTeddy
 }
+
+
 // Fetch data via the API, then parse the response in json format, then display the data 
 fetch("http://localhost:3000/api/teddies/")
     .then(response => response.json())
     .then(data =>  {
         // Call the function createTeddyCard 
-        let teddies = createTeddyCard(data,[])
+        let teddies = createDataArray(data,[]);
+        
         // Search the div that will contain "teddy" objects (cards) with its ID 
         let teddyCard = document.getElementById("products__cards");
 

@@ -27,10 +27,12 @@ const addSelect = (div, className) => {
     div.appendChild(select);
 }
 
+
 // Pick the parameter "teddyId" in each url 
 let urlData = new URL ("http://localhost:3000/api/teddies/:_id");
 let params = new URLSearchParams(window.location.search);
 let _id = params.get("teddyId");
+
 
 // Fetch data via the API, then parse the response in json format, then display the data (get the product's elements that match with each id)
 fetch("http://localhost:3000/api/teddies/" + _id)
@@ -71,6 +73,19 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 // Select the button : "add to the shopping cart"
 const addToCartButton = document.getElementById("button-add-to-cart");
 
+
+// Push cart products in the local storage
+const pushCartInLS = (newProductInCart, productsInCartArray) => {
+    // If there are products in the local storage : the local storage data is stocked in the array "productsInCart" & parsed
+    if (localStorage.getItem("products") !== null) {
+        productsInCartArray = JSON.parse(localStorage.getItem("products"));
+    }
+    // If the local storage is empty : new products are pushed in the cart array, stringified and sent to the local storage
+    productsInCartArray.push(newProductInCart);
+    localStorage.setItem("products", JSON.stringify(productsInCartArray));
+}
+
+
 // Add an object to the local storage
 addToCartButton.addEventListener("click", () => {
     let productAddedToCart = {
@@ -83,11 +98,6 @@ addToCartButton.addEventListener("click", () => {
     // Creation of an array to contain all the products in the cart
     let productsInCart = [];
 
-    // If there are products in the local storage : the data is stocked in the array "productsInCart" and saved in the local storage 
-    if (localStorage.getItem("products") !== null) {
-        productsInCart = JSON.parse(localStorage.getItem("products"));
-    }
-    // If the local storage is empty : products (in the array) are pushed to the local storage
-    productsInCart.push(productAddedToCart);
-    localStorage.setItem("products", JSON.stringify(productsInCart));
+    pushCartInLS(productAddedToCart, productsInCart);
+
 });
