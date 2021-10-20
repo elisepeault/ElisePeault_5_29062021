@@ -29,37 +29,45 @@ const addProductContent = (type_element, name, mainProductDiv) =>{
 
 /* Display products saved in the local storage onto the cart page */
 
-// Declaration of the totalPrices variable (which will contains the total price of products in the cart) with a value of 0  
-let totalPrices = 0;
- 
-for (let product in local) {
+const displayLSOnCart = () => {
+    // Declaration of the totalPrices variable (which will contains the total price of products in the cart) with a value of 0  
+    let totalPrices = 0;
+    
+    for (let product in local) {
+        // Add a Div for each product
+        let productDiv = makeProductDiv();
 
-    // Add a Div for each product
-    let productDiv = makeProductDiv();
+        // Add an image for each product
+        addProductImage(local[product].image, local[product].name, productDiv);
+        // Add a name for each product
+        addProductContent("div", local[product].name, productDiv);
+        // Add a price for each product
+        addProductContent("div", local[product].price + " €", productDiv);
 
-    // Add an image for each product
-    addProductImage(local[product].image, local[product].name, productDiv);
-    // Add a name for each product
-    addProductContent("div", local[product].name, productDiv);
-    // Add a price for each product
-    addProductContent("div", local[product].price + " €", productDiv);
+        // Add the productDiv to the cartDiv (main div that contains all of the productDiv) in the DOM
+        cartDiv.appendChild(productDiv);
 
-    // Add the productDiv to the cartDiv (main div that contains all of the productDiv) in the DOM
-    cartDiv.appendChild(productDiv);
-
-    // Push and add each price to the totalPrices variable. It is an addition that gives the total cost of the cart
-    totalPrices += local[product].price;
-
+        // Push and add each price to the totalPrices variable. It is an addition that gives the total cost of the cart
+        totalPrices += local[product].price;
+    }
 }
+
+displayLSOnCart();
 
 
 /* Display total costs of the teddies in the cart */
 
-// Select the total-costs element in the DOM (where the total will be display)
-let totalCosts = document.getElementById("total-costs");
+let accessTotalPrices = displayLSOnCart["totalPrices"];
 
-// Display the totalCosts in the HTML
-totalCosts.innerHTML = "Prix total =   " + totalPrices + " €";
+const displayTotalCosts = () => {
+    // Select the total-costs element in the DOM (where the total will be display)
+    let totalCosts = document.getElementById("total-costs");
+    // Display the totalCosts in the HTML
+    //totalCosts.innerHTML = "Prix total =   " + totalPrices + " €";
+    totalCosts.innerHTML = "Prix total =   " + accessTotalPrices + " €";
+}
+
+displayTotalCosts();
 
 
 /* "Clear the cart" Button */ 
@@ -91,7 +99,9 @@ let emailInput = document.getElementById("email");
 // Select the submit button of the form in the DOM
 let orderButton = document.getElementById("order-button");
 
+
 /* --- Add the "on submit" EVENT LISTENER to the form --- */ 
+
 cartForm.addEventListener("submit", function (e) {
 
     // prevent the page from reloading or naviguating away
@@ -100,6 +110,7 @@ cartForm.addEventListener("submit", function (e) {
     // the array "purchasedProducts" will contain objects = the teddies that were purchased by the customer
     let purchasedProducts = [];
 
+    // Push ordered products id in an array
     for (let product in local) {
         purchasedProducts.push(local[product].id);
     }
