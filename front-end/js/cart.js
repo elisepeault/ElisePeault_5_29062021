@@ -6,6 +6,9 @@ const cartDiv = document.getElementById("cart-card");
 // Function to get products that are stored in the local storage
 const local = JSON.parse(localStorage.getItem("products"));
 
+// Declaration of the totalPrices variable (which will contains the total price of products in the cart) with a value of 0 
+let totalPrices = 0;
+
 // Creation of a DIV (in order to put each product added to the cart in its own div (line 37))
 const makeProductDiv = () => {
     const productDiv = document.createElement("div"); 
@@ -26,12 +29,17 @@ const addProductContent = (type_element, name, mainProductDiv) =>{
     mainProductDiv.appendChild(productContent);
 }
 
+/* Display total costs of the teddies in the cart */
+
+const displayTotalCosts = () => {
+    // Select the total-costs element in the DOM (where the total will be display)
+    let totalCosts = document.getElementById("total-costs");
+    // Display the totalCosts in the HTML
+    totalCosts.innerHTML = "Prix total =   " + totalPrices + " €";
+}
 
 /* Display products saved in the local storage onto the cart page */
-
 const displayLSOnCart = () => {
-    // Declaration of the totalPrices variable (which will contains the total price of products in the cart) with a value of 0  
-    let totalPrices = 0;
     
     for (let product in local) {
         // Add a Div for each product
@@ -49,25 +57,12 @@ const displayLSOnCart = () => {
 
         // Push and add each price to the totalPrices variable. It is an addition that gives the total cost of the cart
         totalPrices += local[product].price;
+
+        displayTotalCosts();
     }
 }
 
 displayLSOnCart();
-
-
-/* Display total costs of the teddies in the cart */
-
-let accessTotalPrices = displayLSOnCart["totalPrices"];
-
-const displayTotalCosts = () => {
-    // Select the total-costs element in the DOM (where the total will be display)
-    let totalCosts = document.getElementById("total-costs");
-    // Display the totalCosts in the HTML
-    //totalCosts.innerHTML = "Prix total =   " + totalPrices + " €";
-    totalCosts.innerHTML = "Prix total =   " + accessTotalPrices + " €";
-}
-
-displayTotalCosts();
 
 
 /* "Clear the cart" Button */ 
@@ -100,6 +95,23 @@ let emailInput = document.getElementById("email");
 let orderButton = document.getElementById("order-button");
 
 
+// The fetch request interact with the api to send the order information (the contact object and the products array) and return and order id 
+const fetchOrder = (orderData) => {
+    fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(orderData), headers: {"Content-Type":"application/json"} })
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data); 
+            localStorage.clear();
+            localStorage.setItem("orderId", data.orderId);
+            // Redirect to the order-confirmation page (once the order is validated and the order id is saved in the local storage)
+            document.location.href = "order-confirmation.html";
+        })
+        .catch((error) => {
+            alert("Il y a eu une erreur : " + error);
+        });
+}
+
+
 /* --- Add the "on submit" EVENT LISTENER to the form --- */ 
 
 cartForm.addEventListener("submit", function (e) {
@@ -126,30 +138,7 @@ cartForm.addEventListener("submit", function (e) {
         },
         products: purchasedProducts,
     };
-
-    // Fetch data via the API, then parse the response in json format, then display the data 
-    fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(order), headers: {"Content-Type":"application/json"} })
-        .then(response => response.json())
-        .then((data) => {
-            console.log(data); 
-            localStorage.clear();
-            localStorage.setItem("orderId", data.orderId);
-            // Redirect to the order-confirmation page (once the order is validated and the order id is saved in the local storage)
-            document.location.href = "order-confirmation.html";
-        })
-        .catch((error) => {
-            alert("Il y a eu une erreur : " + error);
-        });
+    
+    fetchOrder(order);
 
 });
-
-  /* The BACK-END : Expects request to contain : 
-  contact: {
-    firstName: string,
-    lastName: string,
-    address: string,
-    city: string,
-    email: string
-  }
-  products: [string] <-- array of product _id
-  */
