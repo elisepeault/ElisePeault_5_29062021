@@ -1,15 +1,17 @@
 /*--------------------------- CART ---------------------------*/
  
-// Select the main div in the DOM with its class: "cart-card"
+// Select the main div in the DOM with its class : "cart-card"
 const cartDiv = document.getElementById("cart-card");
 
 // Function to get products that are stored in the local storage
 const local = JSON.parse(localStorage.getItem("products"));
 
-// Declaration of the totalPrices variable (which will contains the total price of products in the cart) with a value of 0 
+
+// Declaration of the totalPrices variable (which will contains the total price of products in the cart)
 let totalPrices = 0;
 
-// Creation of a DIV (in order to put each product added to the cart in its own div (line 37))
+
+// Creation of a DIV (in order to put each product added to the cart in its own div)
 const makeProductDiv = () => {
     const productDiv = document.createElement("div"); 
     productDiv.classList.add("product-div"); 
@@ -29,14 +31,15 @@ const addProductContent = (type_element, name, mainProductDiv) =>{
     mainProductDiv.appendChild(productContent);
 }
 
-/* Display total costs of the teddies in the cart */
 
+/* Display total costs of the teddies in the cart */
 const displayTotalCosts = () => {
     // Select the total-costs element in the DOM (where the total will be display)
     let totalCosts = document.getElementById("total-costs");
     // Display the totalCosts in the HTML
     totalCosts.innerHTML = "Prix total =   " + totalPrices + " €";
 }
+
 
 /* Display products saved in the local storage onto the cart page */
 const displayLSOnCart = () => {
@@ -55,7 +58,7 @@ const displayLSOnCart = () => {
         // Add the productDiv to the cartDiv (main div that contains all of the productDiv) in the DOM
         cartDiv.appendChild(productDiv);
 
-        // Push and add each price to the totalPrices variable. It is an addition that gives the total cost of the cart
+        // Add each price to the totalPrices variable to get a total
         totalPrices += local[product].price;
 
         displayTotalCosts();
@@ -100,7 +103,6 @@ const fetchOrder = (orderData) => {
     fetch("http://localhost:3000/api/teddies/order", {method: "POST", body: JSON.stringify(orderData), headers: {"Content-Type":"application/json"} })
         .then(response => response.json())
         .then((data) => {
-            console.log(data); 
             localStorage.clear();
             localStorage.setItem("orderId", data.orderId);
             // Redirect to the order-confirmation page (once the order is validated and the order id is saved in the local storage)
@@ -127,7 +129,7 @@ cartForm.addEventListener("submit", function (e) {
         purchasedProducts.push(local[product].id);
     }
 
-    // the const "order" contains the object contact (info for the delivery) and the array products (purchased products)
+    // the const "order" contains the object contact (info for the delivery) and the products array (purchased products)
     const order = {
         contact: {
             firstName: firstNameInput.value,

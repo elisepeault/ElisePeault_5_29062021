@@ -55,12 +55,11 @@ const createDataArray = (responseFetch, arrayOfTeddy) => {
     return arrayOfTeddy
 }
 
-
-// Fetch data via the API, then parse the response in json format, then display the data 
+// The fetch request interact with the api, then parse the response in json format, then display the data (array of all the products)
 fetch("http://localhost:3000/api/teddies/")
     .then(response => response.json())
     .then(data =>  {
-        // Call the function createTeddyCard 
+        // Call the function createdataArray 
         let teddies = createDataArray(data,[]);
         
         // Search the div that will contain "teddy" objects (cards) with its ID 

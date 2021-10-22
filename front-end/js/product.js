@@ -34,14 +34,13 @@ let params = new URLSearchParams(window.location.search);
 let _id = params.get("teddyId");
 
 
-// Fetch data via the API, then parse the response in json format, then display the data (get the product's elements that match with each id)
+// Fetch data via the API, then parse the response in json format, then display the data (get the product's element that match with each id)
 fetch("http://localhost:3000/api/teddies/" + _id)
     .then(response => response.json())
     .then(data =>  {
-        console.log(data);
         productData = data; 
 
-        //Search the general div in html with its id 
+        //Search the general div in the DOM with its id 
         let teddyPage = document.getElementById("product-page");
 
         // Create a DIV for the product's card
@@ -67,7 +66,7 @@ fetch("http://localhost:3000/api/teddies/" + _id)
 
 
 /*--------------------------- LOCAL STORAGE ---------------------------*/
-// Collect the data of a selected product & store it in the local storage
+// Collect the data of a selected product & store it into the local storage
 
 
 // Select the button : "add to the shopping cart"
@@ -76,7 +75,7 @@ const addToCartButton = document.getElementById("button-add-to-cart");
 
 // Push cart products in the local storage
 const pushCartInLS = (newProductInCart, productsInCartArray) => {
-    // If there are products in the local storage : the local storage data is stocked in the array "productsInCart" & parsed
+    // If there are products in the local storage : the local storage data is stocked in the array "productsInCart" and parsed
     if (localStorage.getItem("products") !== null) {
         productsInCartArray = JSON.parse(localStorage.getItem("products"));
     }
