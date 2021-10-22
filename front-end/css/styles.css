@@ -6549,7 +6549,6 @@ footer div a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   color: #2f4f4f;
-  margin: 3rem 0 0 0;
 }
 
 #cart-card {
@@ -6625,7 +6624,7 @@ footer div a:hover {
   margin: auto;
   margin-top: 1em;
   margin-bottom: 3em;
-  padding: 1em 3em 1em 3em;
+  padding: 1em 2em 1em 2em;
   max-width: 55em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6634,6 +6633,12 @@ footer div a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 568px) {
+  #cart-form {
+    padding: 1em 1em 1em 1em;
+  }
 }
 
 #cart-form div {

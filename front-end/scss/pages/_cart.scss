@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     color: $primary-color;
-    margin: 3rem 0 0 0;
 }
 
 #cart-card {
@@ -54,10 +53,13 @@
     margin: auto;
     margin-top: 1em;
     margin-bottom : 3em;
-    padding: 1em 3em 1em 3em;
+    padding: 1em 2em 1em 2em;
     max-width: 55em;
     display: flex;
     flex-direction: column;
+    @media(max-width: 568px) {
+        padding: 1em 1em 1em 1em;
+    }
     div {
         margin: 1em 0 0.5em 0;
     }
