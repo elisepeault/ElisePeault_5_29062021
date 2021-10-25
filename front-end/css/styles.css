@@ -6459,7 +6459,7 @@ footer div a:hover {
 @media (min-width: 569px) {
   #confirmation {
     margin-top: 11em;
-    margin-bottom: 22em;
+    margin-bottom: 23em;
   }
 }
 
@@ -6559,17 +6559,12 @@ footer div a:hover {
   font-size: 1.3rem;
 }
 
-/* -------------------- CART --------------------*/
-.cart-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #2f4f4f;
+/* -------------------- CART & FORM -------------------- */
+.cart-title, .form-title {
+  margin: 0 0.5em 0 0.5em;
 }
 
+/* -------------------- CART --------------------*/
 #cart-card {
   border: 0.3em solid #7fd2d2;
   width: 90%;
@@ -6637,17 +6632,13 @@ footer div a:hover {
 }
 
 /* -------------------- FORM --------------------*/
-/*
-.form-title {
-
-}*/
 #cart-form {
   border: 0.3em solid #efbe92;
   width: 90%;
   margin: auto;
   margin-top: 1em;
   margin-bottom: 3em;
-  padding: 1em 2em 1em 2em;
+  padding: 1em 1em 1em 1em;
   max-width: 55em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6658,9 +6649,9 @@ footer div a:hover {
           flex-direction: column;
 }
 
-@media (max-width: 568px) {
+@media (min-width: 375px) {
   #cart-form {
-    padding: 1em 1em 1em 1em;
+    padding: 1em 2em 1em 2em;
   }
 }
 

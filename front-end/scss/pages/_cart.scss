@@ -1,10 +1,9 @@
-/* -------------------- CART --------------------*/
-
-.cart-title {
-    display: flex;
-    justify-content: center;
-    color: $primary-color;
+/* -------------------- CART & FORM -------------------- */
+.cart-title, .form-title {
+    margin: 0 0.5em 0 0.5em;
 }
+
+/* -------------------- CART --------------------*/
 
 #cart-card {
     border: 0.3em solid darken($secondary-color, 15%);
@@ -46,10 +45,6 @@
 }
 
 /* -------------------- FORM --------------------*/
-/*
-.form-title {
-
-}*/
 
 #cart-form {
     border: 0.3em solid $tertiary-color;
@@ -57,12 +52,12 @@
     margin: auto;
     margin-top: 1em;
     margin-bottom : 3em;
-    padding: 1em 2em 1em 2em;
+    padding: 1em 1em 1em 1em;
     max-width: 55em;
     display: flex;
     flex-direction: column;
-    @media(max-width: 568px) {
-        padding: 1em 1em 1em 1em;
+    @media(min-width: 375px) {
+        padding: 1em 2em 1em 2em;
     }
     div {
         margin: 1em 0 0.5em 0;
