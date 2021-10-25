@@ -6562,6 +6562,7 @@ footer div a:hover {
 /* -------------------- CART & FORM -------------------- */
 .cart-title, .form-title {
   margin: 0 0.5em 0 0.5em;
+  text-align: center;
 }
 
 /* -------------------- CART --------------------*/
