@@ -55,6 +55,7 @@ const createDataArray = (responseFetch, arrayOfTeddy) => {
     return arrayOfTeddy
 }
 
+
 // The fetch request interact with the api, then parse the response in json format, then display the data (array of all the products)
 fetch("http://localhost:3000/api/teddies/")
     .then(response => response.json())
